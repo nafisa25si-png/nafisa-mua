@@ -14,39 +14,57 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('guest/img/apple-icon.png') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('guest/img/favicon.png') }}" />
-    <title>Argon Dashboard 2 Tailwind by Creative Tim</title>
-    <!--     Fonts and icons     -->
-    <link href="https://googleapis.com" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://fontawesome.com" crossorigin="anonymous"></script>
-    <!-- Nucleo Icons -->
-    <link href="{{ asset('guest/css/nucleo-icons.css') }}" rel="stylesheet" />
-    <link href="{{ asset('guest/css/nucleo-svg.css') }}" rel="stylesheet" />
-    <!-- Popper -->
-    <script src="https://unpkg.com"></script>
-    <!-- Main Styling -->
-    <link href="{{ asset('guest/css/argon-dashboard-tailwind.css?v=1.0.1') }}" rel="stylesheet" />
-  </head>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Admin Dashboard - MUA Ulva</title>
 
-  <body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+    <!-- Font Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+          rel="stylesheet">
+
+    <!-- CSS Utama Argon Dashboard Admin -->
+    <link rel="stylesheet"
+          href="{{ asset('assets-admin/css/argon-dashboard-tailwind.css') }}">
+</head>
+
+<body class="m-0 font-sans text-base antialiased font-normal
+             dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+
+    <!-- Background Dashboard -->
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
-    <!-- sidenav  -->
-    <aside class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0" aria-expanded="false">
-      <div class="h-19">
-        <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
-        <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank">
-          <img src="./assets/img/logo-ct-dark.png" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
-          <img src="./assets/img/logo-ct.png" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
-          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Argon Dashboard 2</span>
-        </a>
-      </div>
+
+    <!-- Sidebar Admin -->
+    <aside
+        class="fixed inset-y-0 flex-wrap items-center justify-between
+               block w-full p-0 my-4 overflow-y-auto antialiased
+               transition-transform duration-200 -translate-x-full
+               bg-white border-0 shadow-xl dark:shadow-none
+               dark:bg-slate-850 max-w-64 ease-nav-brand z-990
+               xl:ml-6 xl:left-0 xl:translate-x-0"
+        id="sidenav-main">
+
+        <!-- Logo dan Nama Admin -->
+        <div class="h-19">
+            <a
+                class="block px-8 py-6 m-0 text-sm whitespace-nowrap
+                       dark:text-white text-slate-700"
+                href="{{ url('/admin') }}">
+
+                <img
+                    src="{{ asset('assets-admin/images/logo mua ulva.jpeg') }}"
+                    class="inline h-8 w-auto max-w-full"
+                    alt="Logo MUA Ulva">
+
+                <span class="ml-1 font-semibold">
+                    MUA Ulva Admin
+                </span>
+            </a>
+        </div>
 
       <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
 
@@ -134,7 +152,9 @@
         <!-- load phantom colors for card after: -->
         <p class="invisible hidden text-gray-800 text-red-500 text-red-600 text-blue-500 bg-gray-500/30 bg-cyan-500/30 bg-emerald-500/30 bg-orange-500/30 bg-red-500/30 after:bg-gradient-to-tl after:from-zinc-800 after:to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 after:from-blue-700 after:to-cyan-500 after:from-orange-500 after:to-yellow-500 after:from-green-600 after:to-lime-400 after:from-red-600 after:to-orange-600 after:from-slate-600 after:to-slate-300 text-emerald-500 text-cyan-500 text-slate-400"></p>
         <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border" sidenav-card>
-          <img class="w-1/2 mx-auto" src="./assets/img/illustrations/icon-documentation.svg" alt="sidebar illustrations" />
+          <img
+            src="{{ asset('assets-admin/images/logo mua ulva.jpeg') }}"
+            alt="Sidebar illustration">
           <div class="flex-auto w-full p-4 pt-0 text-center">
             <div class="transition-all duration-200 ease-nav-brand">
               <h6 class="mb-0 dark:text-white text-slate-700">Need help?</h6>
@@ -410,7 +430,7 @@
             <div slider class="relative w-full h-full overflow-hidden rounded-2xl">
               <!-- slide 1 -->
               <div slide class="absolute w-full h-full transition-all duration-500">
-                <img class="object-cover h-full" src="./assets/img/carousel-1.jpg" alt="carousel image" />
+                <img src="{{ asset('assets-admin/images/bg_1.jpg') }}" alt="carousel image">
                 <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
                   <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
                     <i class="top-0.75 text-xxs relative text-slate-700 ni ni-camera-compact"></i>
@@ -422,7 +442,10 @@
 
               <!-- slide 2 -->
               <div slide class="absolute w-full h-full transition-all duration-500">
-                <img class="object-cover h-full" src="./assets/img/carousel-2.jpg" alt="carousel image" />
+                <img
+                    class="object-cover h-full"
+                    src="{{ asset('assets-admin/images/bg_2.jpg') }}"
+                    alt="carousel image"/>
                 <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
                   <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
                     <i class="top-0.75 text-xxs relative text-slate-700 ni ni-bulb-61"></i>
@@ -434,7 +457,10 @@
 
               <!-- slide 3 -->
               <div slide class="absolute w-full h-full transition-all duration-500">
-                <img class="object-cover h-full" src="./assets/img/carousel-3.jpg" alt="carousel image" />
+                <img
+                class="object-cover h-full"
+                src="{{ asset('assets-admin/images/bg_2.jpg') }}"
+                alt="carousel image"/>
                 <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
                   <div class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
                     <i class="top-0.75 text-xxs relative text-slate-700 ni ni-trophy"></i>

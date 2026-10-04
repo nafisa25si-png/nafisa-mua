@@ -1,39 +1,30 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>MUA ULVA</title>
+<html lang="id">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-<link rel="stylesheet" href="{{ asset('css/aos.css') }}">
-<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-<link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
-<link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MUA ULVA</title>
+
+    <!-- CSS Guest -->
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets-admin/css/style.css') }}">
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+</head>
 
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
-<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('js/aos.js') }}"></script>
-<script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
-<script src="{{ asset('js/scrollax.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<body>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
