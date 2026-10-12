@@ -80,13 +80,45 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/tables.html">
-              <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
-              </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Tables</span>
-            </a>
-          </li>
+    <a class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+        href="{{ route('pelanggan.index') }}">
+
+        <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+            <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
+        </div>
+
+        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">
+            Data Pelanggan
+        </span>
+
+    </a>
+</li>
+
+<li class="mt-0.5 w-full">
+    <a class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
+       href="{{ route('jadwal.index') }}">
+
+        <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg">
+            <i class="relative top-0 text-sm leading-normal text-pink-500 ni ni-calendar-grid-58"></i>
+        </div>
+
+        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">
+            Jadwal Makeup
+        </span>
+    </a>
+</li>
+
+<li class="mt-0.5 w-full">
+    <a href="{{ route('paket.index') }}"
+       class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors">
+
+        <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg">
+            <i class="text-sm text-pink-500 ni ni-bag-17"></i>
+        </div>
+
+        <span class="ml-1">Paket Makeup</span>
+    </a>
+</li>
 
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/billing.html">

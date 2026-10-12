@@ -38,14 +38,41 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="treatments.html" class="nav-link">Treatments</a></li>
-	          <li class="nav-item"><a href="specialists.html" class="nav-link">Specialists</a></li>
-	          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
+    <li class="nav-item active">
+        <a href="{{ url('/') }}" class="nav-link">Home</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">About</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">Treatments</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">Specialists</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">Pricing</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">Blog</a>
+    </li>
+
+    <li class="nav-item">
+        <a href="#" class="nav-link">Contact</a>
+    </li>
+
+    <!-- Admin -->
+    <li class="nav-item">
+        <a href="{{ url('/admin') }}" class="nav-link">
+            Admin
+        </a>
+    </li>
+</ul>
 	      </div>
 		  </div>
 	  </nav>
@@ -66,9 +93,15 @@
 	            </div>
 	          </div>
             <p>
-            	<a href="#" class="btn btn-primary p-3 px-5 py-4 mr-md-2">Get in Touch</a>
-            	<a href="#" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">Contact</a>
-            </p>
+    <a href="#" class="btn btn-primary p-3 px-5 py-4 mr-md-2">
+        Booking MUA
+    </a>
+
+    <a href="{{ url('/admin') }}"
+        class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">
+        Admin
+    </a>
+</p>
           </div>
         </div>
       </div>
