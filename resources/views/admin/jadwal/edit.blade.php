@@ -11,28 +11,6 @@
     <p class="page-header-sub">Perbarui informasi sesi makeup pelanggan.</p>
 </div>
 
-@if($errors->any())
-    <div class="alert alert-error">
-        <span class="alert-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                 stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="8" x2="12" y2="12"/>
-                <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-        </span>
-        <div>
-            <strong>Terjadi kesalahan:</strong>
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
-@endif
-
 <div class="mc-card">
     <div class="mc-card-header">
         <div class="mc-card-title">
@@ -97,20 +75,16 @@
                     Status Jadwal <span class="req">*</span>
                 </label>
                 <select id="status" name="status" class="form-control" required>
-                    <option value="Menunggu"
-                        {{ old('status', $jadwal->status) == 'Menunggu' ? 'selected' : '' }}>
+                    <option value="Menunggu" {{ old('status', $jadwal->status) == 'Menunggu' ? 'selected' : '' }}>
                         Menunggu
                     </option>
-                    <option value="Dikonfirmasi"
-                        {{ old('status', $jadwal->status) == 'Dikonfirmasi' ? 'selected' : '' }}>
+                    <option value="Dikonfirmasi" {{ old('status', $jadwal->status) == 'Dikonfirmasi' ? 'selected' : '' }}>
                         Dikonfirmasi
                     </option>
-                    <option value="Selesai"
-                        {{ old('status', $jadwal->status) == 'Selesai' ? 'selected' : '' }}>
+                    <option value="Selesai" {{ old('status', $jadwal->status) == 'Selesai' ? 'selected' : '' }}>
                         Selesai
                     </option>
-                    <option value="Dibatalkan"
-                        {{ old('status', $jadwal->status) == 'Dibatalkan' ? 'selected' : '' }}>
+                    <option value="Dibatalkan" {{ old('status', $jadwal->status) == 'Dibatalkan' ? 'selected' : '' }}>
                         Dibatalkan
                     </option>
                 </select>

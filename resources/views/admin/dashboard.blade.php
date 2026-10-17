@@ -14,7 +14,7 @@
     <p class="page-header-sub">Kelola bisnis Maison Coquette dengan mudah dari satu panel.</p>
 </div>
 
-{{-- Stats Cards --}}
+{{-- Stats Grid --}}
 <div class="stats-grid">
 
     {{-- Total Pelanggan --}}
@@ -94,7 +94,7 @@
 {{-- Dashboard Grid --}}
 <div class="dashboard-grid">
 
-    {{-- Recent Jadwal --}}
+    {{-- Jadwal Terbaru --}}
     <div class="mc-card">
         <div class="mc-card-header">
             <div class="mc-card-title">
@@ -159,7 +159,7 @@
         </div>
     </div>
 
-    {{-- Paket Tersedia --}}
+    {{-- Paket Makeup --}}
     <div class="mc-card">
         <div class="mc-card-header">
             <div class="mc-card-title">
