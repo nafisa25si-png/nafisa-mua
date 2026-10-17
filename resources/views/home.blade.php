@@ -1,401 +1,559 @@
 @extends('layouts.app')
 
-@section('title', 'Maison Coquette — MUA & Beauty Studio')
+@section('title', 'Maison Coquette — MUA & Beauty Studio Jakarta')
 
 @section('content')
 
 {{-- ═══════════════════ HERO SECTION ═══════════════════ --}}
-<section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-            <div class="col-md-10 ftco-animate text-center">
-                <div class="icon">
-                    <span class="flaticon-lotus"></span>
+<section class="mc-hero" id="hero">
+    <div class="mc-container">
+        <div class="mc-hero-grid">
+
+            {{-- Left Content --}}
+            <div class="mc-hero-content">
+                <div class="mc-hero-tagline">
+                    <span class="mc-badge">✦ Atelier de Beauté · Jakarta ✦</span>
                 </div>
-                <h1>Maison Coquette</h1>
-                <div class="row justify-content-center">
-                    <div class="col-md-7 mb-3">
-                        <p>Studio Makeup &amp; Beauty terpercaya dengan sentuhan elegan, feminin, dan profesional untuk setiap momen istimewa Anda.</p>
+
+                <h1 class="mc-hero-title">
+                    Mewujudkan Pesona Anggun di Setiap <em>Momen Istimewa</em>
+                </h1>
+
+                <p class="mc-hero-desc">
+                    Studio tata rias eksklusif dengan sentuhan mewah, feminin, dan natural flawless. Menggunakan produk premium internasional untuk riasan tahan 12+ jam yang memancarkan kecantikan terbaik Anda.
+                </p>
+
+                <div class="mc-hero-cta">
+                    <a href="#booking" class="mc-btn mc-btn-primary">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Reservasi Sesi Sekarang
+                    </a>
+                    <a href="#paket" class="mc-btn mc-btn-secondary">
+                        Lihat Pilihan Paket
+                    </a>
+                </div>
+
+                {{-- Trust Numbers --}}
+                <div class="mc-hero-trust">
+                    <div class="mc-trust-item">
+                        <span class="mc-trust-number">500+</span>
+                        <span class="mc-trust-label">Klien Puas &amp; Wisudawati</span>
+                    </div>
+                    <div class="mc-trust-item">
+                        <span class="mc-trust-number">100%</span>
+                        <span class="mc-trust-label">Kosmetik Original &amp; Higienis</span>
+                    </div>
+                    <div class="mc-trust-item">
+                        <span class="mc-trust-number">4.9 ★</span>
+                        <span class="mc-trust-label">Rating Kepuasan Klien</span>
                     </div>
                 </div>
-                <p>
-                    <a href="#treatments" class="btn btn-primary p-3 px-5 py-4 mr-md-2">
-                        Lihat Layanan
-                    </a>
-                    <a href="{{ url('/admin') }}" class="btn btn-outline-primary p-3 px-5 py-4 ml-md-2">
-                        Panel Admin
-                    </a>
+            </div>
+
+            {{-- Right Visual --}}
+            <div class="mc-hero-visual">
+                <div class="mc-hero-card-main">
+                    <img src="{{ asset('images/bg_1.jpg') }}" alt="Maison Coquette Makeup Artistry">
+                </div>
+
+                {{-- Floating Badge 1 --}}
+                <div class="mc-hero-badge-float">
+                    <div class="mc-float-icon">💄</div>
+                    <div>
+                        <div class="mc-float-title">Soft Glam Look</div>
+                        <div class="mc-float-sub">Flawless, Ringan &amp; Tahan Lama</div>
+                    </div>
+                </div>
+
+                {{-- Floating Badge 2 --}}
+                <div class="mc-hero-badge-gold">
+                    <div class="mc-badge-gold-stars">★★★★★</div>
+                    <div class="mc-badge-gold-text">Best MUA Studio 2026</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{{-- ═══════════════════ ABOUT US / TENTANG KAMI ═══════════════════ --}}
+<section class="mc-about-section" id="tentang">
+    <div class="mc-container">
+        <div class="mc-about-grid">
+
+            {{-- Kolom Kiri: Visual --}}
+            <div class="mc-about-visual">
+                <div class="mc-about-image-main">
+                    <img
+                        src="{{ asset('images/bg_1.jpg') }}"
+                        alt="Maison Coquette Beauty Studio"
+                    >
+                </div>
+
+                <div class="mc-about-image-decoration"></div>
+
+                <div class="mc-about-experience">
+                    <span class="mc-about-experience-icon">✦</span>
+                    <div>
+                        <strong>Beauty in Every Detail</strong>
+                        <span>Elegance · Confidence · Beauty</span>
+                    </div>
+                </div>
+
+                <div class="mc-about-floating-text">
+                    MAISON COQUETTE
+                </div>
+            </div>
+
+            {{-- Kolom Kanan: Informasi --}}
+            <div class="mc-about-content">
+                <span class="mc-badge mc-badge-gold">
+                    ✦ Tentang Maison Coquette ✦
+                </span>
+
+                <h2 class="mc-about-title">
+                    Lebih dari Sekadar Riasan,
+                    <em>Merayakan Kecantikan Anda</em>
+                </h2>
+
+                <p class="mc-about-paragraph">
+                    Maison Coquette adalah studio tata rias yang hadir
+                    untuk membantu setiap perempuan tampil anggun,
+                    percaya diri, dan memukau dalam setiap momen istimewa.
+                    Kami percaya bahwa setiap perempuan memiliki
+                    kecantikan unik yang layak ditonjolkan.
+                </p>
+
+                <p class="mc-about-paragraph">
+                    Dengan sentuhan makeup yang elegan, feminin, dan
+                    natural flawless, kami menghadirkan riasan yang
+                    disesuaikan dengan karakter wajah, undertone kulit,
+                    serta kebutuhan setiap klien. Mulai dari wisuda,
+                    lamaran, prewedding, hingga pernikahan dan acara spesial
+                    lainnya.
+                </p>
+
+                <p class="mc-about-paragraph">
+                    Kami mengutamakan detail, kenyamanan, dan kebersihan
+                    dengan penggunaan produk kosmetik premium serta teknik
+                    makeup profesional. Tersedia pula layanan home service
+                    untuk memberikan pengalaman kecantikan yang praktis
+                    dan nyaman bagi Anda.
+                </p>
+
+                {{-- Nilai Utama --}}
+                <div class="mc-about-values">
+                    <div class="mc-about-value">
+                        <span class="mc-about-value-icon">✧</span>
+                        <div>
+                            <h4>Personalized Beauty</h4>
+                            <p>Riasan yang disesuaikan dengan karakter Anda.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-about-value">
+                        <span class="mc-about-value-icon">♡</span>
+                        <div>
+                            <h4>Elegan &amp; Natural</h4>
+                            <p>Menonjolkan kecantikan tanpa kehilangan jati diri.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-about-value">
+                        <span class="mc-about-value-icon">✦</span>
+                        <div>
+                            <h4>Quality &amp; Hygiene</h4>
+                            <p>Memprioritaskan kualitas produk dan kebersihan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{{-- ═══════════════════ FEATURES / WHY CHOOSE US ═══════════════════ --}}
+<section class="mc-features-section" id="layanan">
+    <div class="mc-container">
+        <div class="mc-section-header">
+            <span class="mc-badge mc-badge-gold">✦ Keunggulan Kami ✦</span>
+            <h2 class="mc-section-title">Mengapa Memilih <span>Maison Coquette</span>?</h2>
+            <p class="mc-section-sub">
+                Kami menggabungkan seni rias berkelas dengan kenyamanan layanan untuk memastikan penampilan Anda tak terlupakan.
+            </p>
+        </div>
+
+        <div class="mc-features-grid">
+            {{-- Feature 1 --}}
+            <div class="mc-feature-card">
+                <div class="mc-feature-icon">✨</div>
+                <h3 class="mc-feature-title">Complexion 12+ Jam</h3>
+                <p class="mc-feature-desc">
+                    Teknik skin prep mendalam dan penguncian makeup khusus agar riasan tetap segar, anti-crack, dan bebas minyak sepanjang hari.
+                </p>
+            </div>
+
+            {{-- Feature 2 --}}
+            <div class="mc-feature-card">
+                <div class="mc-feature-icon">💎</div>
+                <h3 class="mc-feature-title">Produk Internasional</h3>
+                <p class="mc-feature-desc">
+                    Hanya menggunakan kosmetik original bersertifikasi (Dior, Charlotte Tilbury, NARS, MAC) yang aman untuk semua jenis kulit.
+                </p>
+            </div>
+
+            {{-- Feature 3 --}}
+            <div class="mc-feature-card">
+                <div class="mc-feature-icon">🎨</div>
+                <h3 class="mc-feature-title">Look Personal &amp; Detail</h3>
+                <p class="mc-feature-desc">
+                    Setiap riasan disesuaikan dengan undertone kulit, bentuk wajah, dan tema busana agar karakter alami Anda terpancar sempurna.
+                </p>
+            </div>
+
+            {{-- Feature 4 --}}
+            <div class="mc-feature-card">
+                <div class="mc-feature-icon">🚗</div>
+                <h3 class="mc-feature-title">Home Service &amp; On-Time</h3>
+                <p class="mc-feature-desc">
+                    Siap hadir tepat waktu di rumah, hotel, maupun venue acara Anda dengan perlengkapan lengkap dan higienis.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ═══════════════════ INTRO / KEUNGGULAN ═══════════════════ --}}
-<section class="ftco-section ftco-intro" style="background-image: url(images/intro.jpg);">
-    <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-md-6">
-                <div class="heading-section ftco-animate">
-                    <h2 class="mb-4">Keunggulan Layanan Maison Coquette</h2>
+{{-- ═══════════════════ DYNAMIC PACKAGES (FROM DATABASE) ═══════════════════ --}}
+<section class="mc-packages-section" id="paket">
+    <div class="mc-container">
+        <div class="mc-section-header">
+            <span class="mc-badge">✦ Pilihan Layanan Kami ✦</span>
+            <h2 class="mc-section-title">Paket Makeup <span>Eksklusif</span></h2>
+            <p class="mc-section-sub">
+                Daftar paket tata rias resmi Maison Coquette. Pilih paket yang sesuai kebutuhan acara spesial Anda.
+            </p>
+        </div>
+
+        <div class="mc-packages-grid">
+            @forelse($dataPaket as $paket)
+                <div class="mc-package-card {{ $loop->iteration == 2 ? 'highlight' : '' }}">
+                    @if($loop->iteration == 2)
+                        <div class="mc-package-card-ribbon">Paling Favorit</div>
+                    @endif
+
+                    <div class="mc-package-top">
+                        <span class="mc-badge" style="font-size:11px; padding:4px 12px; margin-bottom:12px;">
+                            Paket #{{ $loop->iteration }}
+                        </span>
+                        <h3 class="mc-package-name">{{ $paket->nama_paket }}</h3>
+
+                        <div class="mc-package-price">
+                            <span class="mc-price-curr">Rp</span>
+                            <span class="mc-price-val">{{ number_format($paket->harga, 0, ',', '.') }}</span>
+                            <span class="mc-price-unit">/ sesi</span>
+                        </div>
+
+                        <p class="mc-package-desc">
+                            {{ $paket->deskripsi ?: 'Layanan tata rias profesional lengkap dengan sentuhan personal Maison Coquette.' }}
+                        </p>
+                    </div>
+
+                    <ul class="mc-package-perks">
+                        <li>
+                            <span class="mc-perk-icon">✓</span>
+                            <span>Makeup Flawless &amp; Tahan Lama</span>
+                        </li>
+                        <li>
+                            <span class="mc-perk-icon">✓</span>
+                            <span>Skin Prep &amp; Serum Khusus</span>
+                        </li>
+                        <li>
+                            <span class="mc-perk-icon">✓</span>
+                            <span>Bulu Mata Premium Layering</span>
+                        </li>
+                        <li>
+                            <span class="mc-perk-icon">✓</span>
+                            <span>Penataan Rambut / Hijab Styling</span>
+                        </li>
+                    </ul>
+
+                    <button type="button"
+                            class="mc-btn mc-btn-primary mc-package-btn"
+                            onclick="selectPackage('{{ $paket->id }}', '{{ addslashes($paket->nama_paket) }}')">
+                        Pilih &amp; Reservasi
+                    </button>
                 </div>
-                <p class="ftco-animate">Kami menghadirkan riasan profesional berkualitas tinggi dengan sentuhan lembut dan bahan kosmetik premium yang ramah untuk semua jenis kulit.</p>
-                <ul class="mt-5 do-list">
-                    <li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Produk kosmetik original &amp; bersertifikasi aman</a></li>
-                    <li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Teknik rias tahan lama &amp; natural flawless</a></li>
-                    <li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Konsultasi tema &amp; konsep busana personal</a></li>
-                    <li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Tepat waktu &amp; pelayanan ramah profesional</a></li>
-                    <li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Paket hemat untuk wisuda, pre-wedding &amp; wedding</a></li>
+            @empty
+                <div class="mc-empty-box">
+                    <div style="font-size:42px; margin-bottom:12px;">💄</div>
+                    <h3 style="font-family:var(--font-heading); font-size:24px; color:var(--mc-text-dark); margin-bottom:8px;">
+                        Paket Makeup Sedang Diperbarui
+                    </h3>
+                    <p style="color:var(--mc-text-muted); font-size:15px; margin-bottom:20px;">
+                        Silakan hubungi kami langsung via WhatsApp untuk daftar harga dan layanan khusus.
+                    </p>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="mc-btn mc-btn-primary">
+                        Tanya via WhatsApp
+                    </a>
+                </div>
+            @endforelse
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════ ONLINE BOOKING SECTION ═══════════════════ --}}
+<section class="mc-booking-section" id="booking">
+    <div class="mc-container">
+
+        {{-- Success Alert --}}
+        @if(session('booking_success'))
+            <div class="mc-success-box">
+                <div class="mc-success-icon">✓</div>
+                <div>
+                    <strong style="display:block; font-size:16px;">Reservasi Berhasil!</strong>
+                    <span>{{ session('booking_success') }}</span>
+                </div>
+            </div>
+        @endif
+
+        {{-- Validation Error --}}
+        @if($errors->any())
+            <div style="background:#FDF2F4; border:1px solid #F5C6CB; color:#721C24; padding:18px 24px; border-radius:12px; margin-bottom:24px;">
+                <strong>Mohon lengkapi formulir dengan benar:</strong>
+                <ul style="margin-top:6px; padding-left:20px;">
+                    @foreach($errors->all() as $err)
+                        <li>{{ $err }}</li>
+                    @endforeach
                 </ul>
             </div>
+        @endif
+
+        <div class="mc-booking-card">
+
+            {{-- Left Info Column --}}
+            <div class="mc-booking-info">
+                <div>
+                    <div class="mc-booking-info-header">
+                        <span class="mc-badge mc-badge-gold">✦ Reservasi Online ✦</span>
+                        <h3 style="margin-top:14px;">Jadwalkan Sesi Cantik Anda</h3>
+                        <p>
+                            Isi formulir untuk memesan jadwal makeup. Jadwal Anda akan langsung masuk ke sistem admin kami untuk konfirmasi ketersediaan tanggal.
+                        </p>
+                    </div>
+
+                    <div class="mc-booking-contact-list">
+                        <div class="mc-bcontact-item">
+                            <div class="mc-bcontact-icon">📍</div>
+                            <div>
+                                <div class="mc-bcontact-label">Lokasi Studio</div>
+                                <div class="mc-bcontact-value">Kemang, Jakarta Selatan (Bisa Home Service)</div>
+                            </div>
+                        </div>
+
+                        <div class="mc-bcontact-item">
+                            <div class="mc-bcontact-icon">💬</div>
+                            <div>
+                                <div class="mc-bcontact-label">WhatsApp Fast Response</div>
+                                <div class="mc-bcontact-value">+62 812-3456-7890</div>
+                            </div>
+                        </div>
+
+                        <div class="mc-bcontact-item">
+                            <div class="mc-bcontact-icon">⏰</div>
+                            <div>
+                                <div class="mc-bcontact-label">Jam Operasional</div>
+                                <div class="mc-bcontact-value">Setiap Hari · 06.00 – 21.00 WIB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Direct WhatsApp Button --}}
+                <div style="padding-top:20px; border-top:1px solid var(--mc-border);">
+                    <p style="font-size:13px; color:var(--mc-text-muted); margin-bottom:10px;">
+                        Butuh respon darurat atau konsultasi langsung?
+                    </p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Maison%20Coquette,%20saya%20ingin%20tanya%20jadwal%20makeup"
+                       target="_blank"
+                       class="mc-btn mc-btn-gold"
+                       style="width:100%;">
+                        Chat WhatsApp Sekarang
+                    </a>
+                </div>
+            </div>
+
+            {{-- Right Form Column --}}
+            <div class="mc-booking-form-wrap">
+                <form action="{{ route('booking.store') }}" method="POST">
+                    @csrf
+
+                    <div class="mc-form-grid">
+
+                        {{-- Nama --}}
+                        <div class="mc-form-group mc-form-full">
+                            <label class="mc-form-label" for="nama">
+                                Nama Lengkap <span class="req">*</span>
+                            </label>
+                            <input type="text"
+                                   id="nama"
+                                   name="nama"
+                                   value="{{ old('nama') }}"
+                                   class="mc-input"
+                                   placeholder="Contoh: Putri Nabila"
+                                   required>
+                        </div>
+
+                        {{-- WhatsApp / No HP --}}
+                        <div class="mc-form-group">
+                            <label class="mc-form-label" for="no_hp">
+                                Nomor WhatsApp / HP <span class="req">*</span>
+                            </label>
+                            <input type="tel"
+                                   id="no_hp"
+                                   name="no_hp"
+                                   value="{{ old('no_hp') }}"
+                                   class="mc-input"
+                                   placeholder="08xxxxxxxxxx"
+                                   required>
+                        </div>
+
+                        {{-- Email --}}
+                        <div class="mc-form-group">
+                            <label class="mc-form-label" for="email">
+                                Alamat Email
+                            </label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   value="{{ old('email') }}"
+                                   class="mc-input"
+                                   placeholder="nama@email.com">
+                        </div>
+
+                        {{-- Pilihan Paket Makeup (Dynamic from Database) --}}
+                        <div class="mc-form-group mc-form-full">
+                            <label class="mc-form-label" for="paket_id">
+                                Pilihan Paket Makeup <span class="req">*</span>
+                            </label>
+                            <select id="paket_id" name="paket_id" class="mc-select" required>
+                                <option value="" disabled {{ old('paket_id') ? '' : 'selected' }}>
+                                    -- Pilih Paket Layanan --
+                                </option>
+                                @foreach($dataPaket as $paket)
+                                    <option value="{{ $paket->id }}"
+                                        {{ old('paket_id') == $paket->id ? 'selected' : '' }}>
+                                        {{ $paket->nama_paket }} — Rp {{ number_format($paket->harga, 0, ',', '.') }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Tanggal Makeup --}}
+                        <div class="mc-form-group">
+                            <label class="mc-form-label" for="tanggal">
+                                Tanggal Acara <span class="req">*</span>
+                            </label>
+                            <input type="date"
+                                   id="tanggal"
+                                   name="tanggal"
+                                   value="{{ old('tanggal', date('Y-m-d')) }}"
+                                   min="{{ date('Y-m-d') }}"
+                                   class="mc-input"
+                                   required>
+                        </div>
+
+                        {{-- Waktu Makeup --}}
+                        <div class="mc-form-group">
+                            <label class="mc-form-label" for="waktu">
+                                Waktu Selesai Makeup <span class="req">*</span>
+                            </label>
+                            <input type="time"
+                                   id="waktu"
+                                   name="waktu"
+                                   value="{{ old('waktu', '08:00') }}"
+                                   class="mc-input"
+                                   required>
+                        </div>
+
+                        {{-- Alamat / Catatan --}}
+                        <div class="mc-form-group mc-form-full">
+                            <label class="mc-form-label" for="alamat">
+                                Alamat / Lokasi Acara &amp; Catatan Khusus
+                            </label>
+                            <textarea id="alamat"
+                                      name="alamat"
+                                      rows="3"
+                                      class="mc-textarea"
+                                      placeholder="Sebutkan lokasi acara (Studio Kemang / Home service di hotel/rumah) serta request tema makeup jika ada…">{{ old('alamat') }}</textarea>
+                        </div>
+
+                        {{-- Submit Button --}}
+                        <div class="mc-form-full" style="margin-top:10px;">
+                            <button type="submit" class="mc-btn mc-btn-primary" style="width:100%; padding:15px 28px; font-size:16px;">
+                                Kirim Reservasi Sekarang
+                            </button>
+                            <p style="text-align:center; font-size:12px; color:var(--mc-text-muted); margin-top:10px;">
+                                🔒 Data Anda aman &amp; tidak akan dibagikan ke pihak ketiga.
+                            </p>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 </section>
 
-{{-- ═══════════════════ ABOUT / DEALS ═══════════════════ --}}
-<section class="ftco-section ftco-no-pt ftco-no-pb" id="about">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="offer-deal text-center px-2 px-lg-5">
-                    <div class="img" style="background-image: url(images/offer-deal-1.jpg);"></div>
-                    <div class="text mt-4">
-                        <h3 class="mb-4">Book Your Treatment</h3>
-                        <p class="mb-5">Jadwalkan sesi makeup impian Anda dengan mudah bersama tim profesional Maison Coquette.</p>
-                        <p><a href="#treatments" class="btn btn-white px-4 py-3"> Pesan Sekarang <span class="ion-ios-arrow-round-forward"></span></a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="offer-deal active text-center px-2 px-lg-5">
-                    <div class="img" style="background-image: url(images/offer-deal-2.jpg);"></div>
-                    <div class="text mt-4">
-                        <h3 class="mb-4">Great Gift Packages</h3>
-                        <p class="mb-5">Paket spesial lengkap dengan hair-do/hijab-do dan sentuhan elegan di hari bahagia Anda.</p>
-                        <p><a href="#pricing" class="btn btn-white px-4 py-3"> Lihat Paket <span class="ion-ios-arrow-round-forward"></span></a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="offer-deal text-center px-2 px-lg-5">
-                    <div class="img" style="background-image: url(images/offer-deal-3.jpg);"></div>
-                    <div class="text mt-4">
-                        <h3 class="mb-4">Special Offer &amp; Deal</h3>
-                        <p class="mb-5">Dapatkan penawaran harga menarik untuk pemesanan rombongan bridesmaid dan wisuda.</p>
-                        <p><a href="#contact" class="btn btn-white px-4 py-3"> Hubungi Kami <span class="ion-ios-arrow-round-forward"></span></a></p>
-                    </div>
-                </div>
-            </div>
+{{-- ═══════════════════ PORTFOLIO / GALLERY ═══════════════════ --}}
+<section class="mc-gallery-section" id="portofolio">
+    <div class="mc-container">
+        <div class="mc-section-header">
+            <span class="mc-badge">✦ Portofolio Karya ✦</span>
+            <h2 class="mc-section-title">Galeri Riasan <span>Maison Coquette</span></h2>
+            <p class="mc-section-sub">
+                Setiap sentuhan kuas dirancang untuk menampilkan kepribadian unik dan kecantikan alami setiap klien.
+            </p>
         </div>
-    </div>
-</section>
 
-{{-- ═══════════════════ SERVICES ═══════════════════ --}}
-<section class="ftco-section ftco-section-services bg-light" id="services">
-    <div class="container-fluid px-md-5">
-        <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="services text-center ftco-animate">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-candle"></span>
-                    </div>
-                    <div class="text mt-3">
-                        <h3>Bridal &amp; Wedding</h3>
-                        <p>Riasan pengantin adat maupun modern internasional dengan hasil akhir mewah dan tahan seharian.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="services text-center ftco-animate">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-beauty-treatment"></span>
-                    </div>
-                    <div class="text mt-3">
-                        <h3>Graduation Makeup</h3>
-                        <p>Tampil percaya diri, anggun, dan segar saat momen wisuda Anda dengan look flawless natural.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="services text-center ftco-animate">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-stone"></span>
-                    </div>
-                    <div class="text mt-3">
-                        <h3>Engagement &amp; Prewed</h3>
-                        <p>Look makeup romantis dan photogenic yang sempurna untuk sesi foto dokumentasi cinta Anda.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="services text-center ftco-animate">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-relax"></span>
-                    </div>
-                    <div class="text mt-3">
-                        <h3>Party &amp; Event</h3>
-                        <p>Makeup pesta, photoshoot, dan acara keluarga dengan gaya yang disesuaikan karakter wajah Anda.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ═══════════════════ TREATMENTS & PRICING ACCORDION ═══════════════════ --}}
-<section class="ftco-section" id="treatments">
-    <div class="container-fluid px-md-5">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-12 heading-section ftco-animate text-center">
-                <h3 class="subheading">Layanan Eksklusif</h3>
-                <h2 class="mb-1">Pilihan Treatment &amp; Makeup</h2>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-4">
-                <div class="row no-gutters">
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-right-0 border-bottom-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-candle"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Flawless Base</h3>
-                                <p>Kompleksi kulit halus tanpa cakey.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-bottom-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-spa-1"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Eye Perfection</h3>
-                                <p>Rias mata tegas dan memikat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-right-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-stone"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Hair-Do Styling</h3>
-                                <p>Penataan rambut rapi dan elegan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-lotus"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Hijab Styling</h3>
-                                <p>Kreasi hijab modern &amp; syar'i.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="mc-gallery-grid">
+            <div class="mc-gallery-item">
+                <img src="{{ asset('images/gallery-1.jpg') }}" alt="Makeup Wisuda Soft Glam">
+                <div class="mc-gallery-overlay">
+                    <span class="mc-gallery-tag">Wisuda</span>
+                    <h4 class="mc-gallery-title">Soft Glam Natural</h4>
                 </div>
             </div>
 
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div id="accordion" class="myaccordion w-100 text-center py-5 px-1 px-md-4">
-                    <div>
-                        <h3>Daftar Harga</h3>
-                        <p>Penawaran transparan sesuai kebutuhan acara Anda</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="d-flex align-items-center justify-content-between btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Paket Wisuda &amp; Pesta
-                                    <i class="fa" aria-hidden="true"></i>
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body text-left">
-                                <ul>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Graduation Regular</span>
-                                        <span>Rp 250.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Graduation + Hairdo</span>
-                                        <span>Rp 350.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Party / Event Makeup</span>
-                                        <span>Rp 300.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Photoshoot Makeup</span>
-                                        <span>Rp 400.000</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Paket Wedding &amp; Engagement
-                                    <i class="fa" aria-hidden="true"></i>
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body text-left">
-                                <ul>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Lamaran / Engagement</span>
-                                        <span>Rp 750.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Pre-Wedding Session</span>
-                                        <span>Rp 1.000.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Akad Nikah Only</span>
-                                        <span>Rp 1.500.000</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <span>Wedding Resepsi Komplit</span>
-                                        <span>Rp 3.500.000</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mc-gallery-item">
+                <img src="{{ asset('images/gallery-2.jpg') }}" alt="Bridal Makeup Modern">
+                <div class="mc-gallery-overlay">
+                    <span class="mc-gallery-tag">Bridal</span>
+                    <h4 class="mc-gallery-title">Modern Wedding Glow</h4>
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="row no-gutters">
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-right-0 border-bottom-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-beauty-treatment"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Skin Prep</h3>
-                                <p>Persiapan kulit ekstra glowing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-bottom-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-relax"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Lash Extension</h3>
-                                <p>Bulu mata ringan &amp; bervolume.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border border-right-0 p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-massage"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Lip Tint &amp; Gloss</h3>
-                                <p>Bibir plump sehat dan merona.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="treatment w-100 text-center ftco-animate border p-3 py-4">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="flaticon-rose"></span>
-                            </div>
-                            <div class="text mt-2">
-                                <h3>Touch Up Set</h3>
-                                <p>Perlengkapan touch-up seharian.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mc-gallery-item">
+                <img src="{{ asset('images/gallery-3.jpg') }}" alt="Makeup Lamaran & Engagement">
+                <div class="mc-gallery-overlay">
+                    <span class="mc-gallery-tag">Lamaran</span>
+                    <h4 class="mc-gallery-title">Romantic Peach Tone</h4>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-{{-- ═══════════════════ PRICING ═══════════════════ --}}
-<section class="ftco-section bg-light" id="pricing">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h3 class="subheading">Paket Membership</h3>
-                <h2 class="mb-1">Pilihan Paket Langganan</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <h2 class="heading">Silver Package</h2>
-                        <span class="price"><span class="number">250K</span></span>
-                        <span class="excerpt d-block">1x Sesi Regular</span>
-
-                        <h3 class="heading-2 my-4">Fitur Termasuk</h3>
-
-                        <ul class="pricing-text mb-5">
-                            <li>Makeup Natural Flawless</li>
-                            <li>Bulu Mata Standar</li>
-                            <li>Hair-Do / Hijab Standar</li>
-                            <li>Ketahanan s/d 8 Jam</li>
-                        </ul>
-
-                        <a href="#contact" class="btn btn-primary d-block px-2 py-4">Pilih Paket</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <h2 class="heading">Gold Package</h2>
-                        <span class="price"><span class="number">650K</span></span>
-                        <span class="excerpt d-block">Paket Favorit</span>
-
-                        <h3 class="heading-2 my-4">Fitur Termasuk</h3>
-
-                        <ul class="pricing-text mb-5">
-                            <li>Makeup Premium HD Look</li>
-                            <li>Bulu Mata 3D Layering</li>
-                            <li>Hair-Do / Hijab Stylist Eksklusif</li>
-                            <li>Skin Prep Serum Khusus</li>
-                        </ul>
-
-                        <a href="#contact" class="btn btn-primary d-block px-2 py-4">Pilih Paket</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <h2 class="heading">Platinum VIP</h2>
-                        <span class="price"><span class="number">1.5M</span></span>
-                        <span class="excerpt d-block">Paket Lengkap VIP</span>
-
-                        <h3 class="heading-2 my-4">Fitur Termasuk</h3>
-
-                        <ul class="pricing-text mb-5">
-                            <li>Exclusive Bridal / Engagement Look</li>
-                            <li>Standby Touch Up di Lokasi</li>
-                            <li>Free Softlens &amp; Nail Art Simple</li>
-                            <li>Emergency Touch-Up Kit</li>
-                        </ul>
-
-                        <a href="#contact" class="btn btn-primary d-block px-2 py-4">Pilih Paket</a>
-                    </div>
+            <div class="mc-gallery-item">
+                <img src="{{ asset('images/gallery-4.jpg') }}" alt="Photoshoot & Party Look">
+                <div class="mc-gallery-overlay">
+                    <span class="mc-gallery-tag">Party</span>
+                    <h4 class="mc-gallery-title">Editorial Elegance</h4>
                 </div>
             </div>
         </div>
@@ -403,252 +561,84 @@
 </section>
 
 {{-- ═══════════════════ TESTIMONIALS ═══════════════════ --}}
-<section class="ftco-section testimony-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-10 heading-section ftco-animate text-center">
-                <h3 class="subheading">Testimoni Klien</h3>
-                <h2 class="mb-1">Pengalaman Bersama Maison Coquette</h2>
-            </div>
+<section class="mc-testimonials-section" id="testimoni">
+    <div class="mc-container">
+        <div class="mc-section-header">
+            <span class="mc-badge mc-badge-gold">✦ Ulasan Klien ✦</span>
+            <h2 class="mc-section-title">Kisah Bahagia <span>Bersama Kami</span></h2>
+            <p class="mc-section-sub">
+                Kepercayaan dan senyum kepuasan klien adalah penghargaan terbaik bagi setiap karya kami.
+            </p>
         </div>
-        <div class="row ftco-animate">
-            <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel">
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5">
-                            <div class="text">
-                                <div class="line pl-5">
-                                    <p class="mb-4 pb-1">Makeup wisuda aku awet banget dari pagi subuh sampai sore wisuda selesai! Hasilnya flawless dan nggak crack sama sekali. Terima kasih Maison Coquette!</p>
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                                    <div class="ml-4">
-                                        <p class="name">Sarah Amelia</p>
-                                        <span class="position">Wisudawati</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5">
-                            <div class="text">
-                                <div class="line pl-5">
-                                    <p class="mb-4 pb-1">Suka banget sama look makeup lamaran aku. Natural tapi kelihatan manglingi dan elegan. Kakaknya sabar banget dan detail!</p>
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                    <div class="ml-4">
-                                        <p class="name">Dinda Kirana</p>
-                                        <span class="position">Klien Lamaran</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5">
-                            <div class="text">
-                                <div class="line pl-5">
-                                    <p class="mb-4 pb-1">Pilihan warna eyeshadow dan blush on-nya pas banget di undertone kulit aku. Banyak tamu undangan yang muji hasil riasannya!</p>
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                                    <div class="ml-4">
-                                        <p class="name">Nadia Safitri</p>
-                                        <span class="position">Klien Pesta</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5">
-                            <div class="text">
-                                <div class="line pl-5">
-                                    <p class="mb-4 pb-1">Pelayanan sangat on time, ramah, dan komunikatif. Hasil foto-foto prewed jadi cantik maksimal berkat makeup Maison Coquette.</p>
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url(images/person_4.jpg)"></div>
-                                    <div class="ml-4">
-                                        <p class="name">Putri Rahmawati</p>
-                                        <span class="position">Bride to be</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-{{-- ═══════════════════ COUNTER ═══════════════════ --}}
-<section class="ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18 text-center">
-                            <div class="text">
-                                <strong class="number" data-number="1250">0</strong>
-                                <span>Klien Bahagia</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18 text-center">
-                            <div class="text">
-                                <strong class="number" data-number="15">0</strong>
-                                <span>Pilihan Paket</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18 text-center">
-                            <div class="text">
-                                <strong class="number" data-number="5">0</strong>
-                                <span>Tahun Pengalaman</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18 text-center">
-                            <div class="text">
-                                <strong class="number" data-number="500">0</strong>
-                                <span>Event &amp; Wedding</span>
-                            </div>
-                        </div>
+        <div class="mc-testimonials-grid">
+            <div class="mc-testi-card">
+                <div>
+                    <div class="mc-testi-stars">★★★★★</div>
+                    <p class="mc-testi-quote">
+                        "Makeup wisuda aku awet dari jam 5 subuh sampai maghrib selesai foto outdoor! Nggak geser, nggak crack di smile line, dan hasilnya flawless banget di kamera."
+                    </p>
+                </div>
+                <div class="mc-testi-author">
+                    <img src="{{ asset('images/person_1.jpg') }}" alt="Sarah Amelia" class="mc-testi-avatar">
+                    <div>
+                        <div class="mc-testi-name">Sarah Amelia</div>
+                        <div class="mc-testi-role">Klien Wisuda UI</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-{{-- ═══════════════════ BLOG ═══════════════════ --}}
-<section class="ftco-section bg-light" id="blog">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h3 class="subheading">Tips &amp; Inspirasi</h3>
-                <h2 class="mb-1">Artikel Kecantikan Terbaru</h2>
-            </div>
-        </div>
-        <div class="row d-flex">
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry justify-content-end">
-                    <a href="#" class="block-20" style="background-image: url('images/image_1.jpg');"></a>
-                    <div class="text p-4 float-right d-block">
-                        <div class="d-flex align-items-center pt-2 mb-4">
-                            <div class="one">
-                                <span class="day">15</span>
-                            </div>
-                            <div class="two">
-                                <span class="yr">2026</span>
-                                <span class="mos">Oktober</span>
-                            </div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Rahasia Makeup Tahan Seharian Tanpa Retak</a></h3>
-                        <p>Tips skin prep terbaik sebelum mengaplikasikan foundation agar riasan menyatu sempurna dengan kulit.</p>
+            <div class="mc-testi-card">
+                <div>
+                    <div class="mc-testi-stars">★★★★★</div>
+                    <p class="mc-testi-quote">
+                        "Suka banget sama look makeup lamaran aku. Natural tapi manglingi dan mewah. Kakaknya sabar banget, alat makeup-nya bersih dan higienis. Recommended!"
+                    </p>
+                </div>
+                <div class="mc-testi-author">
+                    <img src="{{ asset('images/person_2.jpg') }}" alt="Dinda Kirana" class="mc-testi-avatar">
+                    <div>
+                        <div class="mc-testi-name">Dinda Kirana</div>
+                        <div class="mc-testi-role">Klien Lamaran &amp; Prewedding</div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry justify-content-end">
-                    <a href="#" class="block-20" style="background-image: url('images/image_2.jpg');"></a>
-                    <div class="text p-4 float-right d-block">
-                        <div class="d-flex align-items-center pt-2 mb-4">
-                            <div class="one">
-                                <span class="day">10</span>
-                            </div>
-                            <div class="two">
-                                <span class="yr">2026</span>
-                                <span class="mos">Oktober</span>
-                            </div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Tren Makeup Pengantin Elegan &amp; Modern</a></h3>
-                        <p>Eksplorasi gaya makeup soft glam dengan sentuhan warna peach dan rose yang sedang populer tahun ini.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('images/image_3.jpg');"></a>
-                    <div class="text p-4 float-right d-block">
-                        <div class="d-flex align-items-center pt-2 mb-4">
-                            <div class="one">
-                                <span class="day">02</span>
-                            </div>
-                            <div class="two">
-                                <span class="yr">2026</span>
-                                <span class="mos">Oktober</span>
-                            </div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Panduan Memilih Warna Lipstik Sesuai Undertone</a></h3>
-                        <p>Ketahui apakah kulit Anda bertipe warm, cool, atau neutral undertone untuk pilihan warna bibir yang pas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-{{-- ═══════════════════ GALLERY ═══════════════════ --}}
-<section class="ftco-gallery ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h3 class="subheading">Galeri Karya</h3>
-                <h2 class="mb-1">Portofolio Maison Coquette</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
-                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                        <span class="icon-instagram"></span>
+            <div class="mc-testi-card">
+                <div>
+                    <div class="mc-testi-stars">★★★★★</div>
+                    <p class="mc-testi-quote">
+                        "Pilihan warna blush dan eyeshadow-nya pas banget di undertone kulitku. Foundation-nya seringan second skin tapi coveragenya luar biasa. Terima kasih Maison Coquette!"
+                    </p>
+                </div>
+                <div class="mc-testi-author">
+                    <img src="{{ asset('images/person_3.jpg') }}" alt="Nadia Safitri" class="mc-testi-avatar">
+                    <div>
+                        <div class="mc-testi-name">Nadia Safitri</div>
+                        <div class="mc-testi-role">Klien Wedding Resepsi</div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
-                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                        <span class="icon-instagram"></span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                        <span class="icon-instagram"></span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <a href="images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                        <span class="icon-instagram"></span>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 @endsection
+
+@push('scripts')
+<script>
+    // Smooth scroll and package auto-selection
+    function selectPackage(packageId, packageName) {
+        const select = document.getElementById('paket_id');
+        const bookingSection = document.getElementById('booking');
+
+        if (select) {
+            select.value = packageId;
+        }
+
+        if (bookingSection) {
+            bookingSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+@endpush

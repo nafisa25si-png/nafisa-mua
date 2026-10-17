@@ -14,9 +14,50 @@ class AdminRoutesTest extends TestCase
 
     public function test_home_page_returns_ok(): void
     {
+        $paket = PaketMakeup::create([
+            'nama_paket' => 'Makeup Wisuda Premium',
+            'harga' => 350000,
+            'deskripsi' => 'Paket wisuda lengkap',
+        ]);
+
         $response = $this->get('/');
         $response->assertStatus(200);
         $response->assertSee('Maison Coquette');
+        $response->assertSee('Makeup Wisuda Premium');
+        $response->assertSee('350.000');
+    }
+
+    public function test_online_booking_creates_pelanggan_and_jadwal(): void
+    {
+        $paket = PaketMakeup::create([
+            'nama_paket' => 'Bridal Soft Glam',
+            'harga' => 1500000,
+            'deskripsi' => 'Rias pengantin',
+        ]);
+
+        $bookingData = [
+            'nama' => 'Adelia Maharani',
+            'no_hp' => '081298765432',
+            'email' => 'adelia@gmail.com',
+            'paket_id' => $paket->id,
+            'tanggal' => '2026-11-15',
+            'waktu' => '07:30',
+            'alamat' => 'Hotel Indonesia Kempinski, Jakarta',
+        ];
+
+        $response = $this->post('/booking', $bookingData);
+        $response->assertRedirect('/#booking');
+
+        $this->assertDatabaseHas('pelanggan', [
+            'nama' => 'Adelia Maharani',
+            'no_hp' => '081298765432',
+        ]);
+
+        $this->assertDatabaseHas('jadwal_makeups', [
+            'tanggal' => '2026-11-15',
+            'waktu' => '07:30',
+            'status' => 'Menunggu',
+        ]);
     }
 
     public function test_admin_dashboard_returns_ok(): void

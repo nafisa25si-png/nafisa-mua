@@ -1,47 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}" style="padding-top: 10px; padding-bottom: 10px;">
-            <img src="{{ asset('assets-admin/images/logo maison coquette.jpeg') }}"
-                 alt="Logo Maison Coquette"
-                 style="height: 52px; width: auto; border-radius: 8px; margin-right: 10px;">
-            <span style="font-family: 'Prata', serif; font-size: 20px; font-weight: 700; color: #d96c91; letter-spacing: 0.5px;">
-                Maison Coquette
-            </span>
-        </a>
+{{-- ═══════════════════ MAIN NAVBAR ═══════════════════ --}}
+<header class="mc-navbar-wrapper">
+    <div class="mc-container">
+        <nav class="mc-navbar">
+            {{-- Brand Logo & Name --}}
+            <a href="{{ url('/') }}" class="mc-nav-brand">
+                <img src="{{ asset('assets-admin/images/logo maison coquette.jpeg') }}"
+                     alt="Logo Maison Coquette"
+                     class="mc-brand-logo-img">
+                <div>
+                    <span class="mc-brand-title">Maison Coquette</span>
+                    <span class="mc-brand-sub">Atelier de Beauté</span>
+                </div>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                    <a href="{{ url('/') }}" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#treatments" class="nav-link">Treatments</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#specialists" class="nav-link">Specialists</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pricing" class="nav-link">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#blog" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/admin') }}" class="nav-link" style="color: #d96c91; font-weight: 600;">
-                        Admin Panel
-                    </a>
-                </li>
+            {{-- Navigation Menu --}}
+            <ul class="mc-nav-menu">
+                <li><a href="#hero" class="mc-nav-link active">Home</a></li>
+                <li><a href="#tentang" class="mc-nav-link">Tentang</a></li>
+                <li><a href="#layanan" class="mc-nav-link">Keunggulan</a></li>
+                <li><a href="#paket" class="mc-nav-link">Paket Makeup</a></li>
+                <li><a href="#booking" class="mc-nav-link">Reservasi</a></li>
+                <li><a href="#portofolio" class="mc-nav-link">Portofolio</a></li>
+                <li><a href="#testimoni" class="mc-nav-link">Testimoni</a></li>
             </ul>
-        </div>
+
+            {{-- Actions --}}
+            <div class="mc-nav-actions">
+                <a href="#booking" class="mc-btn mc-btn-primary" style="padding: 10px 22px; font-size: 14px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Booking Sesi
+                </a>
+                <a href="{{ url('/admin') }}" class="mc-nav-admin-link" title="Masuk ke Dashboard Admin">
+                    Admin
+                </a>
+                <button class="mc-mobile-btn" id="mcMobileToggle" aria-label="Menu">
+                    ☰
+                </button>
+            </div>
+        </nav>
     </div>
-</nav>
+
+    {{-- Mobile Dropdown Menu --}}
+    <div id="mcMobileNav" style="display: none;" class="mc-mobile-nav">
+        <a href="#hero" class="mc-nav-link">Home</a>
+        <a href="#tentang" class="mc-nav-link">Tentang Kami</a>
+        <a href="#layanan" class="mc-nav-link">Keunggulan</a>
+        <a href="#paket" class="mc-nav-link">Paket Makeup</a>
+        <a href="#booking" class="mc-nav-link">Reservasi Online</a>
+        <a href="#portofolio" class="mc-nav-link">Portofolio</a>
+        <a href="#testimoni" class="mc-nav-link">Testimoni</a>
+        <a href="{{ url('/admin') }}" class="mc-btn mc-btn-primary" style="margin-top: 8px;">
+            Masuk Portal Admin
+        </a>
+    </div>
+</header>
