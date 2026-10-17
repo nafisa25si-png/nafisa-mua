@@ -11,9 +11,20 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    $dataPelanggan = Pelanggan::all();
+    $totalPelanggan  = \App\Models\Pelanggan::count();
+    $totalJadwal     = \App\Models\JadwalMakeup::count();
+    $jadwalHariIni   = \App\Models\JadwalMakeup::whereDate('tanggal', today())->count();
+    $totalPaket      = \App\Models\PaketMakeup::count();
+    $jadwalTerbaru   = \App\Models\JadwalMakeup::orderByDesc('tanggal')
+                            ->orderByDesc('waktu')
+                            ->limit(5)
+                            ->get();
+    $dataPaket       = \App\Models\PaketMakeup::limit(5)->get();
 
-    return view('admin.dashboard', compact('dataPelanggan'));
+    return view('admin.dashboard', compact(
+        'totalPelanggan', 'totalJadwal', 'jadwalHariIni',
+        'totalPaket', 'jadwalTerbaru', 'dataPaket'
+    ));
 });
 
 Route::resource('pelanggan', PelangganController::class);

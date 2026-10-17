@@ -1,140 +1,166 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Jadwal Makeup - MUA Ulva</title>
-    <link rel="stylesheet" href="{{ asset('assets-admin/css/argon-dashboard-tailwind.css') }}">
-</head>
+@extends('admin.layouts.app')
 
-<body class="bg-gray-50">
+@section('title', 'Data Jadwal Makeup')
+@section('breadcrumb', 'Jadwal Makeup')
+@section('page-title', 'Jadwal Makeup')
 
-<div class="min-h-screen p-6">
+@section('content')
 
-    <h2 class="text-2xl font-bold text-slate-700 mb-2">
-        Data Jadwal Makeup
-    </h2>
+<div class="page-header">
+    <h1 class="page-header-title">Daftar <span>Jadwal Makeup</span></h1>
+    <p class="page-header-sub">Kelola semua sesi makeup pelanggan Maison Coquette.</p>
+</div>
 
-    <p class="text-sm text-slate-500 mb-6">
-        Kelola jadwal makeup pelanggan MUA Ulva
-    </p>
+@if(session('success'))
+    <div class="alert alert-success">
+        <span class="alert-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+        </span>
+        <span>{{ session('success') }}</span>
+    </div>
+@endif
 
-    {{-- Notifikasi sukses --}}
-    @if(session('success'))
-        <div class="mb-5 p-4 bg-green-100 text-green-700 rounded-lg">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    {{-- Notifikasi validasi --}}
-    @if($errors->any())
-        <div class="mb-5 p-4 bg-red-100 text-red-700 rounded-lg">
+@if($errors->any())
+    <div class="alert alert-error">
+        <span class="alert-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+        </span>
+        <div>
             <strong>Terjadi kesalahan:</strong>
-            <ul class="mt-2 list-disc pl-5">
+            <ul>
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
-    @endif
+    </div>
+@endif
 
-    <div class="bg-white rounded-xl shadow-md p-6">
-
-        <div class="flex justify-between items-center mb-5">
-            <h3 class="text-lg font-semibold text-slate-700">
-                Daftar Jadwal
-            </h3>
-
-            <a href="{{ route('jadwal.create') }}"
-               class="inline-block px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
-                + Tambah Jadwal
-            </a>
+<div class="mc-card">
+    <div class="mc-card-header">
+        <div class="mc-card-title">
+            <div class="mc-card-title-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                </svg>
+            </div>
+            Semua Jadwal
         </div>
+        <a href="{{ route('jadwal.create') }}" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Tambah Jadwal
+        </a>
+    </div>
 
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-gray-100 text-slate-700">
-                        <th class="p-3 border">No</th>
-                        <th class="p-3 border">Nama Pelanggan</th>
-                        <th class="p-3 border">Tanggal</th>
-                        <th class="p-3 border">Waktu</th>
-                        <th class="p-3 border">Status</th>
-                        <th class="p-3 border text-center">Aksi</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @forelse($dataJadwal as $jadwal)
-                        <tr class="text-slate-600 hover:bg-gray-50">
-                            <td class="p-3 border">
-                                {{ $loop->iteration }}
-                            </td>
-
-                            <td class="p-3 border">
-                                {{ $jadwal->nama_pelanggan }}
-                            </td>
-
-                            <td class="p-3 border">
-                                {{ $jadwal->tanggal }}
-                            </td>
-
-                            <td class="p-3 border">
-                                {{ substr($jadwal->waktu, 0, 5) }}
-                            </td>
-
-                            <td class="p-3 border">
+    <div class="mc-table-wrap">
+        <table class="mc-table">
+            <thead>
+                <tr>
+                    <th style="width:52px;">No</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Tanggal</th>
+                    <th>Waktu</th>
+                    <th>Status</th>
+                    <th style="text-align:center;width:110px;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($dataJadwal as $jadwal)
+                    <tr>
+                        <td class="col-no">{{ $loop->iteration }}</td>
+                        <td class="col-name">{{ $jadwal->nama_pelanggan }}</td>
+                        <td>{{ \Carbon\Carbon::parse($jadwal->tanggal)->format('d M Y') }}</td>
+                        <td>{{ substr($jadwal->waktu, 0, 5) }}</td>
+                        <td>
+                            @php
+                                $statusClass = match($jadwal->status) {
+                                    'Menunggu'    => 'badge-menunggu',
+                                    'Dikonfirmasi'=> 'badge-dikonfirmasi',
+                                    'Selesai'     => 'badge-selesai',
+                                    'Dibatalkan'  => 'badge-dibatalkan',
+                                    default       => 'badge-menunggu',
+                                };
+                            @endphp
+                            <span class="badge {{ $statusClass }}">
+                                <span class="badge-dot"></span>
                                 {{ $jadwal->status }}
-                            </td>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="btn-actions">
+                                <a href="{{ route('jadwal.edit', $jadwal->id) }}"
+                                   class="btn-icon btn-edit" title="Edit Jadwal">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M12 20h9"/>
+                                        <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L9 17l-4 1 1-4Z"/>
+                                    </svg>
+                                </a>
+                                <form action="{{ route('jadwal.destroy', $jadwal->id) }}"
+                                      method="POST"
+                                      onsubmit="return confirm('Yakin ingin menghapus jadwal ini?')"
+                                      style="margin:0;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                            class="btn-icon btn-delete"
+                                            title="Hapus Jadwal">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                             stroke-linejoin="round">
+                                            <path d="M3 6h18"/>
+                                            <path d="M8 6V4h8v2"/>
+                                            <path d="M19 6l-1 14H6L5 6"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="6" class="mc-table-empty">
+                            <div class="mc-table-empty-icon">🗓️</div>
+                            Belum ada data jadwal makeup.
+                        </td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 
-                            <td class="p-3 border">
-                                <div class="flex flex-wrap justify-center items-center gap-2">
-
-                                    {{-- Tombol Edit --}}
-                                    <a href="{{ route('jadwal.edit', $jadwal->id) }}"
-                                       style="display:inline-block; padding:8px 14px; background-color:#eab308; color:#ffffff; border-radius:6px; text-decoration:none;">
-                                        Edit
-                                    </a>
-
-                                    {{-- Tombol Hapus --}}
-                                    <form action="{{ route('jadwal.destroy', $jadwal->id) }}"
-                                          method="POST"
-                                          onsubmit="return confirm('Yakin ingin menghapus jadwal makeup ini?')"
-                                          style="display:inline-block; margin:0;">
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button type="submit"
-                                                style="display:inline-block; padding:8px 14px; background-color:#ef4444; color:#ffffff; border:0; border-radius:6px; cursor:pointer;">
-                                            Hapus
-                                        </button>
-                                    </form>
-
-                                </div>
-                            </td>
-                        </tr>
-
-                    @empty
-                        <tr>
-                            <td colspan="6"
-                                class="p-5 border text-center text-slate-500">
-                                Belum ada data jadwal makeup.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-
-        <div class="mt-5">
-            <a href="{{ url('/admin') }}"
-               class="text-blue-500 hover:underline">
-                ← Kembali ke Dashboard
-            </a>
-        </div>
-
+    <div style="padding:16px 24px;border-top:1px solid var(--cream-dark);">
+        <a href="{{ url('/admin') }}" class="btn-back">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Kembali ke Dashboard
+        </a>
     </div>
 </div>
 
-</body>
-</html>
+@endsection

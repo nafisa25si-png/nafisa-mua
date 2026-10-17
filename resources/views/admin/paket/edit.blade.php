@@ -1,79 +1,108 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Paket Makeup - MUA Ulva</title>
-    <link rel="stylesheet" href="{{ asset('assets-admin/css/argon-dashboard-tailwind.css') }}">
-</head>
-<body class="bg-gray-50">
+@extends('admin.layouts.app')
 
-<div class="min-h-screen p-6">
-    <h2 class="text-2xl font-bold text-slate-700 mb-2">
-        Edit Paket Makeup
-    </h2>
+@section('title', 'Edit Paket Makeup')
+@section('breadcrumb', 'Paket Makeup')
+@section('page-title', 'Edit Paket')
 
-    <p class="text-sm text-slate-500 mb-6">
-        Perbarui informasi paket makeup MUA Ulva
-    </p>
+@section('content')
 
-    @if($errors->any())
-        <div class="mb-5 p-4 bg-red-100 text-red-700 rounded-lg">
+<div class="page-header">
+    <h1 class="page-header-title">Edit <span>Paket Makeup</span></h1>
+    <p class="page-header-sub">Perbarui informasi paket layanan Maison Coquette.</p>
+</div>
+
+@if($errors->any())
+    <div class="alert alert-error">
+        <span class="alert-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+        </span>
+        <div>
             <strong>Terjadi kesalahan:</strong>
-            <ul class="mt-2">
+            <ul>
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
-    @endif
+    </div>
+@endif
 
-    <div class="bg-white rounded-xl shadow-md p-6">
-        <form action="{{ route('paket.update', $paket->id) }}" method="POST">
+<div class="mc-card">
+    <div class="mc-card-header">
+        <div class="mc-card-title">
+            <div class="mc-card-title-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L9 17l-4 1 1-4Z"/>
+                </svg>
+            </div>
+            Edit Informasi Paket
+        </div>
+    </div>
+
+    <div class="mc-card-body">
+        <form action="{{ route('paket.update', $paket->id) }}" method="POST" class="form-section">
             @csrf
             @method('PUT')
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Nama Paket</label>
+            <div class="form-group">
+                <label class="form-label" for="nama_paket">
+                    Nama Paket <span class="req">*</span>
+                </label>
                 <input type="text"
+                       id="nama_paket"
                        name="nama_paket"
                        value="{{ old('nama_paket', $paket->nama_paket) }}"
-                       class="w-full border rounded-lg p-3"
+                       class="form-control"
+                       placeholder="Contoh: Makeup Wisuda Elegan"
                        required>
             </div>
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Harga Paket (Rp)</label>
+            <div class="form-group">
+                <label class="form-label" for="harga">
+                    Harga Paket (Rp) <span class="req">*</span>
+                </label>
                 <input type="number"
+                       id="harga"
                        name="harga"
                        value="{{ old('harga', $paket->harga) }}"
                        min="0"
-                       step="0.01"
-                       class="w-full border rounded-lg p-3"
+                       step="1000"
+                       class="form-control"
                        required>
             </div>
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Deskripsi Paket</label>
-                <textarea name="deskripsi"
-                          rows="4"
-                          class="w-full border rounded-lg p-3">{{ old('deskripsi', $paket->deskripsi) }}</textarea>
+            <div class="form-group">
+                <label class="form-label" for="deskripsi">Deskripsi Paket</label>
+                <textarea id="deskripsi"
+                          name="deskripsi"
+                          class="form-control"
+                          rows="4">{{ old('deskripsi', $paket->deskripsi) }}</textarea>
             </div>
 
-            <div class="flex gap-3">
-                <button type="submit"
-                        class="px-5 py-3 bg-blue-500 text-white rounded-lg">
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
                     Simpan Perubahan
                 </button>
-
-                <a href="{{ route('paket.index') }}"
-                   class="px-5 py-3 bg-gray-400 text-white rounded-lg">
-                    Kembali
-                </a>
+                <a href="{{ route('paket.index') }}" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>
 </div>
 
-</body>
-</html>
+@endsection
